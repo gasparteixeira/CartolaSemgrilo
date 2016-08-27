@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="#C5CAE9"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/atleta_foto"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/atleta_apelido"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/atleta_foto"
+            android:text="Androidwarriors "
+            android:textColor="@color/material_blue_grey_900"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="25sp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/atleta_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/time_desc"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Place to dive into "
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/atleta_apelido"
+            android:layout_toRightOf="@+id/atleta_foto"
+            android:layout_toLeftOf="@+id/time_escudo"
+            android:layout_marginLeft="10dp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/time_escudo"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:textColor="@color/time_desc"
+            android:text="FLA"
+            android:id="@+id/clube_desc"
+            android:layout_alignParentBottom="false"
+            android:layout_marginTop="0dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/time_escudo"
+            android:layout_marginRight="15dp" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
