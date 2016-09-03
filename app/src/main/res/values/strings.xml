@@ -1,15 +1,32 @@
 <resources>
     <string name="app_name">Cartola Semgrilo</string>
 
-    <string-array name="android_dropdown_arrays">
-        <item>ESCOLHA UM ESQUEMA</item>
-        <item>4-3-3 </item>
-        <item>3-5-2</item>
-        <item>3-4-3</item>
-        <item>4-4-2</item>
-        <item>4-5-1</item>
-        <item>5-3-2</item>
-        <item>5-4-1</item>
-    </string-array>
+    <string name="action_settings">Configurações</string>
+    <string name="str_compartilhar">Compartilhar</string>
+    <string name="action_logout">Sair</string>
+    <string name="str_buscar">Buscar</string>
+    <string name="confirm_message">Tem certeza que deseja sair?</string>
+    <string name="bt_sim">SIM</string>
+    <string name="bt_nao">NÃO</string>
+    <string name="action_register">Registrar-se</string>
+
+    <string name="facebook_app_id">932776990183170</string>
+
+    <string name="dialog_alert_title">ATENÇÃO!</string>
+    <string name="dialog_alert_content">Filtro inválido! \nSelecione ao menos uma formação para realizar o filtro.</string>
+    <string name="dialog_alert_ok">BELEZA</string>
+
+    <string name="dialog_min_title">ATENÇÃO!</string>
+    <string name="dialog_min_content">Filtro inválido! \nO valor mínimo aceitável é de C$ 50.00 para compor o filtro.</string>
+    <string name="dialog_min_ok">BELEZA</string>
+
+    <string name="dialog_logout_title">ATENÇÃO</string>
+    <string name="dialog_logout_content">Tem certeza que deseja sair?</string>
+    <string name="dialog_logout_ok">SIM</string>
+    <string name="dialog_logout_no">NÃO</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello </string>
+
 </resources>
 

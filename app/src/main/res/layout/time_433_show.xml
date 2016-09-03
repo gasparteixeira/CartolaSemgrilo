@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/time_433_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:foreground="?attr/selectableItemBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:cardBackgroundColor="#50000000">
+    <!-- android:background="#C5CAE9" -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titulo433"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:text="FORMAÇÃO 433"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+
+        <ImageView
+            android:id="@+id/a433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/titulo433"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/a433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a433_1"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textColor="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/a433_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/titulo433"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/a433_2_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a433_2"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/a433_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/titulo433"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="50dp" />
+
+        <TextView
+            android:id="@+id/a433_3_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/a433_3"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <!-- meias -->
+
+        <ImageView
+            android:id="@+id/m433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/a433_1_nome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/m433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/m433_1"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/m433_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/a433_2_nome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp" />
+
+        <TextView
+            android:id="@+id/m433_2_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/m433_2"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/m433_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/a433_3_nome"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/m433_3_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/m433_3"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+        <!-- laterais -->
+
+        <ImageView
+            android:id="@+id/l433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/m433_1_nome"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/l433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/l433_1"
+            android:layout_marginLeft="10dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/l433_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/m433_3_nome"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/l433_3_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/l433_3"
+            android:layout_marginRight="10dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <!-- zagueiros -->
+
+        <ImageView
+            android:id="@+id/z433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/l433_1_nome"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/z433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/z433_1"
+            android:layout_marginLeft="50dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+
+        <ImageView
+            android:id="@+id/z433_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/l433_3_nome"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/z433_3_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/z433_3"
+            android:layout_marginRight="60dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <!-- goleiro -->
+
+        <ImageView
+            android:id="@+id/g433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/z433_1_nome"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/g433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/g433_1"
+            android:layout_centerHorizontal="true"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <!-- tecnico -->
+
+        <ImageView
+            android:id="@+id/t433_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/g433_1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="0dp" />
+
+        <TextView
+            android:id="@+id/t433_1_nome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/t433_1"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="0dp"
+            android:singleLine="true"
+            android:text="Marquinhos Gabriel"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/t433_1_nome"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/valor433"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:text="VALOR"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/B433"
+                android:layout_width="wrap_content"
+                android:text="Listar"
+                android:onClick="onListTime"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

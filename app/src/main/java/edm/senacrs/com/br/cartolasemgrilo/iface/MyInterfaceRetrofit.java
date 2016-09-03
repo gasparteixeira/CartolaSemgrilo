@@ -10,7 +10,6 @@ import retrofit2.http.GET;
  */
 public interface MyInterfaceRetrofit {
 
-    //@GET("atletas/mercado")
-    @GET("mercado3.json")
+    @GET("atletas/mercado")
     Call<Retorno> buscarAtletas();
 }

@@ -6,6 +6,7 @@ import com.google.common.collect.Ordering;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 import edm.senacrs.com.br.cartolasemgrilo.model.Atletas;
 
@@ -14,10 +15,28 @@ import edm.senacrs.com.br.cartolasemgrilo.model.Atletas;
  */
 public class ClassificacaoValor {
 
-    protected Atletas getVariacaoAtaque(Atletas atletas) {
+    /*
+
+     */
+    private static final int GOLEIRO = 8;
+    private static final int TECNICO = 7;
+    private static final int ZAGUEIRO = 5;
+    private static final int LATERAIS = 5;
+    private static final int MEIAS = 8;
+    private static final int ATACANTES = 11;
+
+    protected Atletas getVariacaoAtaque(Atletas atletas, Map<String, Object> filtro) {
         Integer valorizacao = 0;
+
         //variacao comum
-        valorizacao = getValorComum(atletas, valorizacao);
+        valorizacao += getValorComum(atletas, valorizacao);
+
+        //para obter mais cartoletas
+        if((Boolean) filtro.get("cartoletas") && atletas.getVariacao_num() < 0) {
+            Double variacao_num = Math.abs(atletas.getVariacao_num());
+            variacao_num = variacao_num * 20;
+            valorizacao += variacao_num.intValue();
+        }
 
         if(atletas.getScout() != null) {
             //scout de ataque
@@ -31,12 +50,69 @@ public class ClassificacaoValor {
         return  atletas;
     }
 
-    protected Atletas getVariacaoDefesa(Atletas atletas) {
+    protected Atletas getVariacaoDefesa(Atletas atletas, Map<String, Object> filtro) {
         Integer valorizacao = 0;
         //variacao comum
         valorizacao = getValorComum(atletas, valorizacao);
 
+        //para obter mais cartoletas
+        if((Boolean) filtro.get("cartoletas") && atletas.getVariacao_num() < 0) {
+            Double variacao_num = Math.abs(atletas.getVariacao_num());
+            variacao_num = variacao_num * 20;
+            valorizacao += variacao_num.intValue();
+        }
+
         if(atletas.getScout() != null) {
+            //scout de ataque
+            valorizacao += getScoutAtaqueBasico(atletas, valorizacao);
+
+            // scout de defesa
+            valorizacao -= getScoutDefesa(atletas, valorizacao);
+        }
+
+        atletas.setVariacao(valorizacao);
+        return  atletas;
+    }
+
+    protected Atletas getVariacaoGoleiro(Atletas atletas, Map<String, Object> filtro) {
+        Integer valorizacao = 0;
+
+        if(!filtro.get("valor").toString().equals("0.0")) {
+            double value = Double.valueOf(filtro.get("valor").toString());
+            double maxValue = (double)(value*(GOLEIRO/100.0f));
+
+            if(atletas.getPreco_num() > maxValue) {
+                atletas.setVariacao(valorizacao);
+                return  atletas;
+            }
+        }
+
+        //variacao comum
+        valorizacao += getValorComum(atletas, valorizacao);
+
+        //para obter mais cartoletas
+        if((Boolean) filtro.get("cartoletas") && atletas.getVariacao_num() < 0) {
+            Double variacao_num = Math.abs(atletas.getVariacao_num());
+            variacao_num = variacao_num * 20;
+            valorizacao += variacao_num.intValue();
+        }
+
+        if(atletas.getScout() != null) {
+            if(atletas.getScout().getDD() != null && atletas.getScout().getDD() > 0 ) {
+                valorizacao += atletas.getScout().getDD() * 3;
+            }
+
+            if(atletas.getScout().getDP() != null && atletas.getScout().getDP() > 0) {
+                valorizacao += atletas.getScout().getDP() * 7;
+            }
+
+            if(atletas.getScout().getSG() != null && atletas.getScout().getSG() > 0) {
+                valorizacao += atletas.getScout().getSG() * 5;
+            }
+
+            if(atletas.getScout().getGS() != null && atletas.getScout().getGS() > 0) {
+                valorizacao -= atletas.getScout().getGS() * 2;
+            }
 
         }
 
@@ -44,26 +120,27 @@ public class ClassificacaoValor {
         return  atletas;
     }
 
-    protected Atletas getVariacaoGoleiro(Atletas atletas) {
+    protected Atletas getVariacaoTecnico(Atletas atletas, Map<String, Object> filtro) {
         Integer valorizacao = 0;
-        //variacao comum
-        valorizacao = getValorComum(atletas, valorizacao);
 
-        if(atletas.getScout() != null) {
+        if(!filtro.get("valor").toString().equals("0.0")) {
+            double value = Double.valueOf(filtro.get("valor").toString());
+            double maxValue = (double)(value*(TECNICO/100.0f));
 
+            if(atletas.getPreco_num() > maxValue) {
+                atletas.setVariacao(valorizacao);
+                return  atletas;
+            }
         }
 
-        atletas.setVariacao(valorizacao);
-        return  atletas;
-    }
 
-    protected Atletas getVariacaoTecnico(Atletas atletas) {
-        Integer valorizacao = 0;
         //variacao comum
-        valorizacao = getValorComum(atletas, valorizacao);
-
-        if(atletas.getScout() != null) {
-
+        valorizacao += getValorComum(atletas, valorizacao);
+        //para obter mais cartoletas
+        if((Boolean)filtro.get("cartoletas") && atletas.getVariacao_num() < 0) {
+            Double variacao_num = Math.abs(atletas.getVariacao_num());
+            variacao_num = variacao_num * 20;
+            valorizacao += variacao_num.intValue();
         }
 
         atletas.setVariacao(valorizacao);
@@ -86,7 +163,7 @@ public class ClassificacaoValor {
 
     private Integer getValorComum(Atletas atletas, Integer valorizacao) {
         if((long)atletas.getClube_id() == (long)atletas.getPartida().getClube_casa_id()){
-            valorizacao += 30;
+            valorizacao += 50;
         }
         if(atletas.getMedia_num() != null && atletas.getMedia_num() > 0){
             Double media = (atletas.getMedia_num() * atletas.getJogos_num());
@@ -147,10 +224,6 @@ public class ClassificacaoValor {
 
         return valorizacao;
     }
-
-
-
-
 
 
 }

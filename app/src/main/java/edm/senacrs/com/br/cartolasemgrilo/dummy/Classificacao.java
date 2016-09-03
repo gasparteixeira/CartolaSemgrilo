@@ -1,14 +1,19 @@
 package edm.senacrs.com.br.cartolasemgrilo.dummy;
 
+
+
+
 import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.Ordering;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edm.senacrs.com.br.cartolasemgrilo.MyApplication;
 import edm.senacrs.com.br.cartolasemgrilo.dummy.utils.ClassificacaoValor;
 import edm.senacrs.com.br.cartolasemgrilo.model.Atletas;
 import edm.senacrs.com.br.cartolasemgrilo.model.Retorno;
@@ -25,10 +30,12 @@ public class Classificacao extends ClassificacaoValor {
     private List<Atletas> laterais;
     private List<Atletas> goleiros;
     private List<Atletas> tecnicos;
+    private Map<String, Object> filtro = new HashMap<>();
 
-    public Classificacao(Retorno retorno) {
+    public Classificacao(MyApplication application) {
 
-        this.retorno   = retorno;
+        this.retorno   = application.getRetorno();
+        this.filtro    = application.getFiltro();
         this.atacantes = new ArrayList<Atletas>();
         this.meias     = new ArrayList<Atletas>();
         this.zagueiros = new ArrayList<Atletas>();
@@ -43,27 +50,28 @@ public class Classificacao extends ClassificacaoValor {
             if(atleta.getStatus_id() == 7) {
                 switch (atleta.getPosicao_id()) {
                     case 1:
-                        this.goleiros.add(this.getVariacaoGoleiro(atleta));
+                        this.goleiros.add(this.getVariacaoGoleiro(atleta, filtro));
                         break;
                     case 2:
-                        this.laterais.add(this.getVariacaoDefesa(atleta));
+                        this.laterais.add(this.getVariacaoDefesa(atleta, filtro));
                         break;
                     case 3:
-                        this.zagueiros.add(this.getVariacaoDefesa(atleta));
+                        this.zagueiros.add(this.getVariacaoDefesa(atleta, filtro));
                         break;
                     case 4:
-                        this.meias.add(this.getVariacaoAtaque(atleta));
+                        this.meias.add(this.getVariacaoAtaque(atleta, filtro));
                         break;
                     case 5:
-                        this.atacantes.add(this.getVariacaoAtaque(atleta));
+                        this.atacantes.add(this.getVariacaoAtaque(atleta, filtro));
                         break;
                     case 6:
-                        this.tecnicos.add(this.getVariacaoTecnico(atleta));
+                        this.tecnicos.add(this.getVariacaoTecnico(atleta, filtro));
                         break;
                 }
             }
         }
     }
+
 
     public List<Atletas> getAtacantes() {
         return this.getOrdenado(atacantes);
